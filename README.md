@@ -1,69 +1,163 @@
-# Abdur Rehman — Portfolio
+# Abdur Rehman — Developer Portfolio
 
-Built with **Vite + Vanilla JS + Tailwind CSS v4**, following the content map and design system you provided.
+A fast, responsive, and minimalist developer portfolio built with **Vite**, **Vanilla JavaScript**, and **Tailwind CSS v4**. Modular by design — almost everything you'd want to change lives in one file.
 
-## Running it locally
+> 🔗 **Part of a two-repo portfolio system.**
+> Frontend → this repo
+> Backend (chatbot API) → [portfolio-backend](https://github.com/abdurehmaan366/portfolio-backend)
+
+![Vite](https://img.shields.io/badge/Vite-8.x-646CFF?logo=vite&logoColor=white)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-v4-38B2AC?logo=tailwind-css&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-ES6+-F7DF1E?logo=javascript&logoColor=black)
+
+---
+
+## 📖 Table of Contents
+
+- [Overview](#overview)
+- [Features](#features)
+- [Tech Stack](#tech-stack)
+- [Project Structure](#project-structure)
+- [Getting Started](#getting-started)
+- [Configuration](#configuration)
+- [Pending TODOs](#pending-todos)
+- [License](#license)
+- [Contact](#contact)
+
+---
+
+## 📜 Overview
+
+This is the source code for my personal portfolio site. It showcases engineering case studies, project deep-dives, my background and skills, and an integrated chatbot that answers questions about my work. The site is multi-page, statically built, and designed to be fully customizable through a single config file.
+
+---
+
+## ✨ Features
+
+- 📄 **Multi-page layout** — Home, Projects (case studies), About, and Contact, each as a separate HTML entry point
+- ⚙️ **Single config file** — all personal details, links, and project data live in `src/js/config.js`; touch nothing else for most updates
+- 🧩 **Shared components** — nav, footer, tech strip, and chatbot are modular JS files that mount themselves across pages
+- 🤖 **Interactive chatbot** — answers visitor questions about projects and experience; connects to a separate backend API
+- 🎨 **Inline SVG skill icons** — sourced from [Simple Icons](https://simpleicons.org/), they inherit your accent color on hover
+- 🎞️ **Auto-scrolling tech strip** — animated skill badge banner on the home page
+- 🖼️ **Lightbox gallery** — screenshot viewer on project case study pages
+- 💨 **Tailwind CSS v4** — utility-first styling with design tokens defined in `src/style.css`
+- 🔤 **Google Fonts** — Space Grotesk + Inter, loaded via CDN
+
+---
+
+## 🛠️ Tech Stack
+
+| Layer | Tool |
+|---|---|
+| Build | [Vite 8.x](https://vitejs.dev/) |
+| Styling | [Tailwind CSS v4](https://tailwindcss.com/) via `@tailwindcss/vite` |
+| Language | Vanilla JavaScript (ES6 modules) |
+| Icons | [Simple Icons](https://simpleicons.org/) (npm) |
+| Typography | Google Fonts — Space Grotesk, Inter |
+
+---
+
+## 📁 Project Structure
+
+```
+├── index.html               # Home page
+├── projects.html            # Projects & case studies
+├── about.html               # Education, internship, skills, certifications
+├── contact.html             # Contact form & links
+├── vite.config.js           # Vite + multi-page entry points
+├── package.json
+└── src/
+    ├── style.css            # Design tokens, font imports, shared component classes
+    ├── js/
+    │   ├── config.js        # ← Edit here: all links, content, and project data
+    │   ├── main.js          # Global init entry point; mounts contact form handler
+    │   ├── nav.js           # Responsive nav bar (mobile menu included)
+    │   ├── footer.js        # Shared footer
+    │   ├── tech-strip.js    # Auto-scrolling tech skills banner (Home)
+    │   ├── about.js         # Skills grid renderer (About)
+    │   ├── contact.js       # Contact links renderer
+    │   ├── chatbot.js       # Chatbot widget; connects to backend via config.chat.apiUrl
+    │   ├── lightbox.js      # Screenshot lightbox for project pages
+    │   ├── project-detail.js# Dynamic project detail view
+    │   ├── projects-page.js # Projects list renderer
+    │   └── repo-badge.js    # GitHub star/fork badge fetcher
+    └── assets/
+        ├── cv/              # Your CV/resume PDF
+        ├── certificates/    # Coursera and other credentials
+        ├── icons/           # SVG skill icons
+        └── images/          # Project screenshots and profile photo
+```
+
+---
+
+## 🚀 Getting Started
+
+**Prerequisites:** Node.js v18+ and npm.
 
 ```bash
+# 1. Clone the repo
+git clone https://github.com/abdurehmaan366/portfolio-frontend.git
+cd portfolio-frontend
+
+# 2. Install dependencies
 npm install
-npm run dev       # local dev server with hot reload
-npm run build      # production build → outputs to /dist
-npm run preview    # preview the production build
+
+# 3. Start the dev server
+npm run dev
+# → http://localhost:5173
 ```
 
-## Structure
+**Available scripts:**
 
-```
-index.html          Home
-projects.html        Projects (Pantry Inventory case study + CRUD Todo API)
-about.html            About (education, internship, skills, certifications)
-contact.html          Contact (form + links)
+| Script | What it does |
+|---|---|
+| `npm run dev` | Starts Vite dev server with hot reload |
+| `npm run build` | Production build → outputs to `/dist` |
+| `npm run preview` | Preview the production build locally |
 
-src/
-  style.css           Design tokens (fonts, colors) + shared component classes
-  js/
-    config.js          ← EDIT HERE: links, contact info, project data
-    nav.js              Shared nav bar (mobile menu included)
-    footer.js           Shared footer
-    tech-strip.js       Auto-scrolling technologies strip (Home)
-    about.js            Skills grid renderer
-    contact.js          Contact links renderer
-    main.js             Mounts everything + handles the contact form
-  assets/
-    icons/              Skill icons (from the open-source Simple Icons set)
-    images/             Your uploaded screenshots + photo
-```
+> 💬 **Chatbot:** The portfolio chatbot requires the backend server to be running. Clone and start [portfolio-backend](https://github.com/abdurehmaan366/portfolio-backend) separately — it listens on `http://localhost:3001` by default, which is what this frontend expects in dev.
 
-## One place to edit almost everything
+---
 
-Open `src/js/config.js` first. It holds:
+## 🔧 Configuration
 
-- Your email, LinkedIn, GitHub links (currently placeholders marked `TODO`)
-- Your CV path — once you add a PDF to `src/assets/cv/`, update `links.cv` and the
-  "Download CV" button will activate automatically on every page
-- Project data for both Pantry Inventory and CRUD Todo API, including GitHub repo
-  and live demo URLs (currently `null` — add them here when ready)
+**Open `src/js/config.js` first.** It is the single source of truth for:
 
-## Still needs your input
+- Your name, role, and tagline displayed across the site
+- Email, LinkedIn, GitHub, and CV links
+- All project data — names, descriptions, tech stacks, GitHub repos, demo URLs, screenshots, and the session bug write-up for the Pantry Inventory case study
+- Chatbot API URL (`chat.apiUrl`) — defaults to `http://localhost:3001/api/chat` for local dev; update to your deployed backend URL before going live
 
-These are marked with `TODO` / dashed placeholder boxes directly in the site:
+The "Download CV" button activates automatically once you drop a PDF into `public/cv/` and set `links.cv` to `/cv/abdur-rehman-cv.pdf` in config.
 
-1. **The session isolation bug write-up** (`projects.html`, Pantry Inventory case study) —
-   this is the centerpiece of your proof statement. A guided structure is left as an
-   HTML comment right above the placeholder.
-2. **Before/after code snippets** for that same fix.
-3. **GitHub repo links** for both projects.
-4. **Live demo link** for Pantry Inventory, if you deploy one.
-5. **Your CV file** (for the Download CV button).
-6. **Certifications** (About page).
-7. **FlyRank internship project details** (About + Projects pages) — a placeholder
-   card is already in place on the Projects page for when these are ready.
-8. **Real email/LinkedIn/GitHub URLs** in `config.js`.
+---
 
-## Notes
+## 📝 Pending TODOs
 
-- Skill icons come from the [Simple Icons](https://simpleicons.org/) open-source set (npm package),
-  inlined as SVG so they pick up your accent color on hover states.
-- Fonts are loaded from Google Fonts (Space Grotesk + Inter) via a CDN `@import` in `style.css`.
-- The contact form isn't wired to a backend yet — it currently just shows a message
-  pointing people to your email. Wire up a real submit handler in `src/js/main.js` when ready.
+The following are marked with `TODO` comments in the code or shown as dashed placeholder boxes on the live site:
+
+1. **Session isolation bug write-up** (`projects.pantryInventory.bugWriteup` in `config.js`) — the centrepiece of the Pantry Inventory case study. A guided HTML comment structure is left above the placeholder in `projects.html`.
+2. **Before/after code snippets** for the session bug fix (`bugCodeBefore` / `bugCodeAfter` in config).
+3. **GitHub repo link** for Pantry Inventory (`projects.pantryInventory.github`).
+4. **Live demo link** for Pantry Inventory, if deployed (`projects.pantryInventory.demo`).
+5. **CV PDF** — add to `public/cv/` and confirm the path in `links.cv`.
+6. **Certifications** — About page has a placeholder section ready.
+7. **FlyRank internship details** — a placeholder card is already in `projects.html` for when these are ready to share.
+8. **Chatbot backend URL** — update `chat.apiUrl` in config before deploying.
+9. **Contact form backend** — currently shows a fallback message pointing to your email. Wire up a real submit handler in `src/js/main.js` when ready.
+
+---
+
+## 🔒 License
+
+Copyright © 2026 Abdur Rehman. All rights reserved.
+
+Source code is publicly available for review and learning purposes. Reusing the design, content, branding, or assets as your own portfolio is not permitted.
+
+---
+
+## ✉️ Contact
+
+**Abdur Rehman**
+[abdurrehman.se.work@gmail.com](mailto:abdurrehman.se.work@gmail.com) · [LinkedIn](https://linkedin.com/in/abdur-rehman-2b39a33b1) · [GitHub](https://github.com/abdurehmaan366)
