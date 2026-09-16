@@ -123,7 +123,7 @@ export const chat = {
   // Local dev default. Once you deploy the backend (Render, etc.),
   // update this to your live backend URL, e.g.
   // "https://portfolio-backend-xxxx.onrender.com/api/chat"
-  apiUrl: "abdur-portfolio-backend-production.up.railway.app",
+  apiUrl: "https://abdur-portfolio-backend-production.up.railway.app/api/chat",
   starterQuestions: [
     "What's the session bug story?",
     "What's your tech stack?",
