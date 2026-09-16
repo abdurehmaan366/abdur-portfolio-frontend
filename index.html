@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Abdur Rehman — Backend Engineer</title>
+  <meta name="description"
+    content="Backend Software Engineering student and AI Engineering intern building secure, session-based backend systems." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <style>
+    #page-loader {
+      position: fixed;
+      inset: 0;
+      z-index: 200;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #FAFAFA;
+      transition: opacity 300ms ease-out;
+    }
+
+    #page-loader .loader-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      font-weight: 600;
+      font-size: 1.125rem;
+      color: #111111;
+    }
+
+    #page-loader .loader-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 9999px;
+      background-color: #22C55E;
+      box-shadow: 0 0 0 3px #F0FDF4;
+    }
+
+    #page-loader .loader-dots {
+      display: flex;
+      gap: 0.375rem;
+      margin-top: 1rem;
+    }
+
+    #page-loader .loader-dots span {
+      width: 8px;
+      height: 8px;
+      border-radius: 9999px;
+      background-color: #7A7A7A;
+      animation: loader-bounce 1s infinite ease-in-out;
+    }
+
+    #page-loader .loader-dots span:nth-child(2) {
+      animation-delay: 150ms;
+    }
+
+    #page-loader .loader-dots span:nth-child(3) {
+      animation-delay: 300ms;
+    }
+
+    @keyframes loader-bounce {
+
+      0%,
+      80%,
+      100% {
+        transform: translateY(0);
+        opacity: 0.5;
+      }
+
+      40% {
+        transform: translateY(-6px);
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+
+<body data-active="/index.html" class="font-body">
+  <div id="nav"></div>
+  <div id="page-loader">
+    <div style="display:flex; flex-direction:column; align-items:center; gap:1rem;">
+      <span class="loader-brand">
+        <span class="loader-dot"></span>
+        Abdur Rehman
+      </span>
+      <div class="loader-dots">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <!-- HERO -->
+    <section class="mx-auto max-w-6xl px-5 sm:px-8 pt-20 pb-16 sm:pt-28 sm:pb-24">
+      <p class="eyebrow mb-5"><span class="status-dot mr-2 align-middle"></span>available for backend intern roles</p>
+      <h1 class="font-display font-semibold text-4xl sm:text-6xl leading-[1.05] max-w-3xl">
+        Secure Backend Systems with Reliable Authentication.
+      </h1>
+      <p class="mt-6 text-base sm:text-lg text-ink-60 max-w-xl leading-relaxed">
+        I build backend systems that handle real user data safely — including a project where I found and fixed a
+        multi-user session bug that let one account see another's data.
+      </p>
+      <div class="mt-9 flex flex-wrap items-center gap-3">
+        <a href="/projects.html" class="btn-primary">View Projects</a>
+        <a href="/contact.html" class="btn-secondary">Get in Touch</a>
+      </div>
+    </section>
+
+    <!-- FEATURED WORK -->
+    <section class="mx-auto max-w-6xl px-5 sm:px-8 pb-20 sm:pb-28">
+      <div class="flex items-end justify-between mb-6">
+        <div>
+          <p class="eyebrow mb-2">featured work</p>
+          <h2 class="font-display font-semibold text-2xl sm:text-3xl">Pantry Inventory</h2>
+        </div>
+      </div>
+
+      <a href="/projects.html#pantry-inventory" class="card block overflow-hidden group">
+        <div class="grid sm:grid-cols-2">
+          <div class="p-7 sm:p-9 flex flex-col justify-center order-2 sm:order-1">
+            <p class="text-ink-60 leading-relaxed">
+              A pantry inventory manager with a full session-based auth system — registration, email OTP verification,
+              login, and password reset — plus full CRUD on pantry items. Built while fixing a real multi-user session
+              isolation bug.
+            </p>
+            <div class="flex flex-wrap gap-2 mt-5">
+              <span class="tag">Node.js</span>
+              <span class="tag">Express.js</span>
+              <span class="tag">MongoDB</span>
+              <span class="tag">EJS</span>
+              <span class="tag">Sessions</span>
+            </div>
+            <span class="btn-ghost mt-6">See the case study &rarr;</span>
+          </div>
+          <div class="order-1 sm:order-2 bg-[#F5F5F5] p-6 sm:p-8 flex items-center">
+            <img src="/images/pantry/pantry-home.png" alt="Pantry Inventory home screen showing stocked items"
+              class="rounded-lg border border-border w-full shadow-sm group-hover:shadow-md transition-shadow" />
+          </div>
+        </div>
+      </a>
+
+      <div class="mt-8">
+        <a href="/projects.html" class="btn-secondary">View All Projects</a>
+      </div>
+    </section>
+
+    <!-- AUTO-SCROLLING TECH STRIP -->
+    <section id="tech-strip"></section>
+  </main>
+
+  <div id="footer"></div>
+
+  <script type="module" src="/src/js/main.js"></script>
+</body>
+
+</html>

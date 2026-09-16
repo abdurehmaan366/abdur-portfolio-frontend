@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About — Abdur Rehman</title>
+  <meta name="description"
+    content="Software Engineering student at COMSATS University Islamabad and Backend AI Engineering intern at FlyRank." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <style>
+    #page-loader {
+      position: fixed;
+      inset: 0;
+      z-index: 200;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #FAFAFA;
+      transition: opacity 300ms ease-out;
+    }
+
+    #page-loader .loader-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      font-weight: 600;
+      font-size: 1.125rem;
+      color: #111111;
+    }
+
+    #page-loader .loader-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 9999px;
+      background-color: #22C55E;
+      box-shadow: 0 0 0 3px #F0FDF4;
+    }
+
+    #page-loader .loader-dots {
+      display: flex;
+      gap: 0.375rem;
+      margin-top: 1rem;
+    }
+
+    #page-loader .loader-dots span {
+      width: 8px;
+      height: 8px;
+      border-radius: 9999px;
+      background-color: #7A7A7A;
+      animation: loader-bounce 1s infinite ease-in-out;
+    }
+
+    #page-loader .loader-dots span:nth-child(2) {
+      animation-delay: 150ms;
+    }
+
+    #page-loader .loader-dots span:nth-child(3) {
+      animation-delay: 300ms;
+    }
+
+    @keyframes loader-bounce {
+
+      0%,
+      80%,
+      100% {
+        transform: translateY(0);
+        opacity: 0.5;
+      }
+
+      40% {
+        transform: translateY(-6px);
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+
+<body data-active="/about.html" class="font-body">
+  <div id="nav"></div>
+  <div id="page-loader">
+    <div style="display:flex; flex-direction:column; align-items:center; gap:1rem;">
+      <span class="loader-brand">
+        <span class="loader-dot"></span>
+        Abdur Rehman
+      </span>
+      <div class="loader-dots">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <!-- ABOUT ME -->
+    <section class="mx-auto max-w-5xl px-5 sm:px-8 pt-16 pb-14 sm:pt-24 sm:pb-16">
+      <p class="eyebrow mb-4">about</p>
+      <div class="grid sm:grid-cols-[auto_1fr] gap-8 sm:gap-12 items-start">
+        <div class="w-44 h-44 sm:w-64 sm:h-64 rounded-2xl p-2.5 shadow-md shrink-0">
+          <img src="/images/profile/abdur-rehman.jpeg" alt="Portrait of Abdur Rehman"
+            class="w-full h-full rounded-xl object-cover object-top" />
+        </div>
+        <div class="flex flex-col justify-center h-[250px]">
+          <h1 class="font-display font-semibold text-3xl sm:text-4xl">Abdur Rehman</h1>
+          <p class="text-ink-60 mt-3 leading-relaxed max-w-2xl">
+            I'm a Software Engineering student at COMSATS University Islamabad and a Backend AI Engineering intern at
+            FlyRank. I work mainly with JavaScript, Node.js, Express.js, MongoDB, and EJS, and I'm currently building my
+            skills in backend AI engineering, API development, and AI-powered applications through hands-on projects.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- EDUCATION -->
+    <section class="mx-auto max-w-5xl px-5 sm:px-8 py-12 border-t border-border">
+      <p class="eyebrow mb-6">education</p>
+      <div class="card p-6 sm:p-7 flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-6">
+        <div class="flex-1">
+          <h3 class="font-display font-semibold text-lg">BS Software Engineering</h3>
+          <p class="text-ink-60 mt-1">COMSATS University Islamabad</p>
+        </div>
+        <span class="tag w-fit">In Progress</span>
+      </div>
+    </section>
+
+    <!-- INTERNSHIP -->
+    <section class="mx-auto max-w-5xl px-5 sm:px-8 py-12 border-t border-border">
+      <p class="eyebrow mb-6">experience</p>
+      <div class="card p-6 sm:p-7">
+        <div class="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-6">
+          <div class="flex-1">
+            <h3 class="font-display font-semibold text-lg">Backend AI Engineering Intern</h3>
+            <p class="text-ink-60 mt-1">FlyRank</p>
+          </div>
+          <span class="tag w-fit"><span class="status-dot mr-1.5 align-middle"></span>Current</span>
+        </div>
+        <div class="placeholder-block p-4 mt-5">
+          TODO — add a short summary of what you've built during this internship
+          (completed projects, capstone project, repos, demos) once they're ready to share.
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section class="mx-auto max-w-5xl px-5 sm:px-8 py-12 border-t border-border">
+      <p class="eyebrow mb-6">skills</p>
+      <div id="skills-grid" class="grid grid-cols-2 sm:grid-cols-5 gap-3"></div>
+    </section>
+
+    <!-- CERTIFICATIONS -->
+    <section class="mx-auto max-w-5xl px-5 sm:px-8 py-12 border-t border-border pb-20 sm:pb-28">
+      <p class="eyebrow mb-6">certifications</p>
+      <div class="grid sm:grid-cols-2 gap-6">
+
+        <div class="card overflow-hidden">
+          <img src="/images/certificates/coursera_data_structures_certificate.png"
+            alt="Python Data Structures certificate" data-lightbox class="w-full aspect-[16/10] object-cover" />
+          <div class="p-5">
+            <div class="flex items-start justify-between gap-3">
+              <div>
+                <h3 class="font-display font-semibold">Python Data Structures Certificate</h3>
+                <p class="text-ink-60 text-sm mt-1">University of Michigan &middot; Coursera</p>
+                <p class="text-xs font-mono text-ink-40 mt-3">2025</p>
+              </div>
+              <a href="https://coursera.org/verify/KSR9G32RWW4O" target="_blank" rel="noopener noreferrer"
+                class="text-xs font-mono text-ink-60 hover:text-accent transition-colors shrink-0">Verify &#8599;</a>
+            </div>
+            <a href="/certificates/coursera_data_structures_certificate.pdf" target="_blank" rel="noopener noreferrer"
+              class="tag hover:border-accent hover:text-accent transition-colors inline-flex mt-3">View PDF</a>
+          </div>
+        </div>
+
+        <div class="card overflow-hidden">
+          <img src="/images/certificates/coursera_problem_solving_certificate.png" alt="Problem Solving certificate"
+            data-lightbox class="w-full aspect-[16/10] object-cover" />
+          <div class="p-5">
+            <div class="flex items-start justify-between gap-3">
+              <div>
+                <h3 class="font-display font-semibold">Problem Solving Certificate</h3>
+                <p class="text-ink-60 text-sm mt-1">Coursera</p>
+                <p class="text-xs font-mono text-ink-40 mt-3">2025</p>
+              </div>
+              <a href="https://coursera.org/verify/TG4KILK8M70B" target="_blank" rel="noopener noreferrer"
+                class="text-xs font-mono text-ink-60 hover:text-accent transition-colors shrink-0">Verify &#8599;</a>
+            </div>
+            <a href="/certificates/coursera_problem_solving_certificate.pdf" target="_blank" rel="noopener noreferrer"
+              class="tag hover:border-accent hover:text-accent transition-colors inline-flex mt-3">View PDF</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <div id="footer"></div>
+
+  <script type="module" src="/src/js/main.js"></script>
+  <script type="module" src="/src/js/about.js"></script>
+</body>
+
+</html>

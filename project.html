@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title id="page-title">Project — Abdur Rehman</title>
+  <meta name="description" id="page-description" content="Project details." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <style>
+    #page-loader {
+      position: fixed;
+      inset: 0;
+      z-index: 200;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #FAFAFA;
+      transition: opacity 300ms ease-out;
+    }
+
+    #page-loader .loader-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      font-weight: 600;
+      font-size: 1.125rem;
+      color: #111111;
+    }
+
+    #page-loader .loader-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 9999px;
+      background-color: #22C55E;
+      box-shadow: 0 0 0 3px #F0FDF4;
+    }
+
+    #page-loader .loader-dots {
+      display: flex;
+      gap: 0.375rem;
+      margin-top: 1rem;
+    }
+
+    #page-loader .loader-dots span {
+      width: 8px;
+      height: 8px;
+      border-radius: 9999px;
+      background-color: #7A7A7A;
+      animation: loader-bounce 1s infinite ease-in-out;
+    }
+
+    #page-loader .loader-dots span:nth-child(2) {
+      animation-delay: 150ms;
+    }
+
+    #page-loader .loader-dots span:nth-child(3) {
+      animation-delay: 300ms;
+    }
+
+    @keyframes loader-bounce {
+
+      0%,
+      80%,
+      100% {
+        transform: translateY(0);
+        opacity: 0.5;
+      }
+
+      40% {
+        transform: translateY(-6px);
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+
+<body data-active="/projects.html" class="font-body">
+  <div id="nav"></div>
+  <div id="page-loader">
+    <div style="display:flex; flex-direction:column; align-items:center; gap:1rem;">
+      <span class="loader-brand">
+        <span class="loader-dot"></span>
+        Abdur Rehman
+      </span>
+      <div class="loader-dots">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <div id="project-not-found" class="hidden mx-auto max-w-3xl px-5 sm:px-8 py-24 text-center">
+      <p class="eyebrow mb-3">not found</p>
+      <h1 class="font-display font-semibold text-2xl">This project doesn't exist.</h1>
+      <a href="/projects.html" class="btn-secondary mt-6 inline-flex">&larr; Back to Projects</a>
+    </div>
+
+    <div id="project-detail"></div>
+  </main>
+
+  <div id="footer"></div>
+
+  <script type="module" src="/src/js/main.js"></script>
+  <script type="module" src="/src/js/project-detail.js"></script>
+</body>
+
+</html>
