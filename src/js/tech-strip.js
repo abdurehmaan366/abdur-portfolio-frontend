@@ -28,9 +28,9 @@ function renderItems() {
   return skills
     .map(
       (s) => `
-      <div class="group flex items-center gap-2.5 pr-10 shrink-0 text-ink-60 cursor-default">
+      <div class="group flex items-center gap-3 px-6 py-2 rounded-full glass border border-white/5 hover:border-accent/40 mr-6 shrink-0 text-ink-60 hover:text-ink cursor-default transition-all duration-200">
         <span class="w-5 h-5 transition-all duration-200 ease-out group-hover:scale-125 group-hover:text-accent [&>svg]:w-full [&>svg]:h-full">${ICON_MAP[s.icon] ?? ""}</span>
-        <span class="font-mono text-sm whitespace-nowrap transition-colors duration-200 group-hover:text-accent">${s.name}</span>
+        <span class="font-mono text-xs sm:text-sm whitespace-nowrap transition-colors duration-200 group-hover:text-accent">${s.name}</span>
       </div>`
     )
     .join("");
@@ -39,10 +39,10 @@ function renderItems() {
 export function renderTechStrip() {
   const items = renderItems();
   return `
-  <div class="border-y border-border bg-white overflow-hidden py-5">
+  <div class="tech-strip-container overflow-hidden py-6">
     <div class="marquee-track flex w-max">
-      <div class="flex">${items}</div>
-      <div class="flex" aria-hidden="true">${items}</div>
+      <div class="flex items-center">${items}</div>
+      <div class="flex items-center" aria-hidden="true">${items}</div>
     </div>
   </div>`;
 }

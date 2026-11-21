@@ -1,4 +1,5 @@
 import "../style.css";
+import "./liquid-glass.js";
 import { mountNav } from "./nav.js";
 import { mountFooter } from "./footer.js";
 import { mountTechStrip } from "./tech-strip.js";
@@ -16,12 +17,10 @@ mountChatbot();
 const loader = document.getElementById("page-loader");
 if (loader) {
   loader.style.opacity = "0";
-  setTimeout(() => loader.remove(), 300);
+  setTimeout(() => loader.remove(), 400);
 }
 
-// Contact form: no backend wired up yet, so this just gives the
-// user feedback in the UI. Replace with a real submit handler
-// (e.g. POST to an email API or backend route) when ready.
+// Contact form UI feedback
 const form = document.getElementById("contact-form");
 if (form) {
   form.addEventListener("submit", (e) => {

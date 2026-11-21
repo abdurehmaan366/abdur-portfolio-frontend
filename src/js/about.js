@@ -29,9 +29,9 @@ if (grid) {
   grid.innerHTML = skills
     .map(
       (s) => `
-      <div class="group card flex flex-col items-center justify-center gap-2.5 py-6 px-3 text-center cursor-default transition-colors duration-200 hover:border-accent">
-        <span class="w-7 h-7 text-ink transition-all duration-200 ease-out group-hover:scale-125 group-hover:text-accent [&>svg]:w-full [&>svg]:h-full">${ICON_MAP[s.icon] ?? ""}</span>
-        <span class="text-sm font-medium transition-colors duration-200 group-hover:text-accent">${s.name}</span>
+      <div class="group liquid-card glass flex flex-col items-center justify-center gap-3 py-6 px-4 text-center cursor-default border border-white/10 hover:border-accent/50 transition-all duration-200">
+        <span class="w-8 h-8 text-ink-60 transition-all duration-200 ease-out group-hover:scale-125 group-hover:text-accent [&>svg]:w-full [&>svg]:h-full">${ICON_MAP[s.icon] ?? ""}</span>
+        <span class="text-xs sm:text-sm font-mono transition-colors duration-200 text-ink group-hover:text-accent">${s.name}</span>
       </div>`
     )
     .join("");
